@@ -9,7 +9,7 @@ require (
 	github.com/mcuadros/go-defaults v1.2.0
 	github.com/natifdevelopment/go-observability v0.2.1
 	github.com/natifdevelopment/go-openapi v0.1.1
-	github.com/natifdevelopment/go-types v0.0.0
+	github.com/natifdevelopment/go-types v1.0.0
 	golang.org/x/net v0.57.0
 	golang.org/x/text v0.40.0
 	gorm.io/gorm v1.31.2
@@ -47,5 +47,3 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace github.com/natifdevelopment/go-types => ../types

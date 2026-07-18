@@ -64,6 +64,8 @@ github.com/natifdevelopment/go-observability v0.2.1 h1:JZW9TE6WoKz1qQVkah4AM01lD
 github.com/natifdevelopment/go-observability v0.2.1/go.mod h1:0NM8vUjzV/F1n2s5QSE92DrYXF0Zt9uRG1r0Ouc2oSE=
 github.com/natifdevelopment/go-openapi v0.1.1 h1:wZz72Bk5cn9g0eC8ZSUpeBf5Bc9LzF7qStfCdruhAwA=
 github.com/natifdevelopment/go-openapi v0.1.1/go.mod h1:aCWNs9RUyaKhuBlFgazak+pgM1X+u24Na1ly8zviqKI=
+github.com/natifdevelopment/go-types v1.0.0 h1:Ec4Lbuz+LfzYA8iUDd9Je8lkhoHCWD0Sl+HlyrEvEuU=
+github.com/natifdevelopment/go-types v1.0.0/go.mod h1:qkFz5uJhIxnwW9SLGtx6TmUq25N8wmH2qZPYucNova8=
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLANZcx1PVRCS0qkT7pwLkGfwJo4zjcN/Tysno=
 github.com/pelletier/go-toml/v2 v2.3.1 h1:MYEvvGnQjeNkRF1qUuGolNtNExTDwct51yp7olPtrEc=
 github.com/pelletier/go-toml/v2 v2.3.1/go.mod h1:2gIqNv+qfxSVS7cM2xJQKtLSTLUE9V8t9Stt+h56mCY=
