@@ -152,9 +152,7 @@ func PrintStructName(data interface{}) {
 		t = t.Elem()
 	}
 	if t.Kind() == reflect.Struct {
-		fmt.Println("Struct name:", t.Name())
 	} else {
-		fmt.Println("Not a struct")
 	}
 }
 
