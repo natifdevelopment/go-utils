@@ -127,7 +127,8 @@ func CreateTableQuery(table CreateTable) (string, error) {
 	builder.WriteString(fmt.Sprintf("CREATE TABLE %s (\n", table.TableName))
 
 	for i, col := range table.Columns {
-		builder.WriteString("\t" + buildColumnDefinition(col))
+		builder.WriteString("\t")
+		builder.WriteString(buildColumnDefinition(col))
 		if i < len(table.Columns)-1 {
 			builder.WriteString(",\n")
 		}
@@ -148,22 +149,24 @@ func DropTableQuery(table DropTable) (string, error) {
 	return builder.String(), nil
 }
 
-func InsertTableQuery(data InsertTable) (string, error) {
+func InsertTableQuery(data InsertTable) (string, []interface{}, error) {
 	if len(data.Fields) == 0 {
-		return "", fmt.Errorf("cannot create query with no field")
+		return "", nil, fmt.Errorf("cannot create query with no field")
 	}
 
-	var builder strings.Builder
-	var columns, values []string
+	var columns []string
+	var placeholders []string
+	var args []interface{}
 
 	for _, field := range data.Fields {
 		columns = append(columns, field.Name)
-		values = append(values, fmt.Sprintf("'%v'", field.Value))
+		placeholders = append(placeholders, "?")
+		args = append(args, field.Value)
 	}
 
-	builder.WriteString(fmt.Sprintf("INSERT INTO %s (%s)\nVALUES (%s);", data.TableName, strings.Join(columns, ", "), strings.Join(values, ", ")))
+	query := fmt.Sprintf("INSERT INTO %s (%s)\nVALUES (%s);", data.TableName, strings.Join(columns, ", "), strings.Join(placeholders, ", "))
 
-	return builder.String(), nil
+	return query, args, nil
 }
 
 func InsertManyTableQuery(data InsertManyTable) (string, error) {
